@@ -23,3 +23,5 @@ print(sum(totals[-3:]))
 
 
 #top_3 = sorted(zip(totals), reverse=True)[:3]
+
+# test
