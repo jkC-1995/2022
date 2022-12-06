@@ -13,8 +13,6 @@ uppercase = {"A": 27, "B": 28, "C": 29, "D": 30, "E": 31, "F": 32, "G": 33, "H":
 
 def sum_letters(letter):
 
-    # print(type(letter))
-
     if letter.islower():
         lower_case = lowercase[letter]
         return lower_case
@@ -28,15 +26,9 @@ common_characters = []
 for x in rucksack:
     first_half = set(x[:len(x)//2])
     second_half = set(x[len(x)//2:])
-
-   # print(first_half, second_half)
-
     # get overlap through set logic (intersection of two sets)
     # intersection() return what in in first/second half
     overlap_char = (first_half.intersection(second_half)).pop()
-    print(overlap_char)
     common_characters.append(overlap_char)
-
-# print(common_characters)
 
 print(sum([sum_letters(letter) for letter in common_characters]))
