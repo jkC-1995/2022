@@ -31,4 +31,29 @@ for x in rucksack:
     overlap_char = (first_half.intersection(second_half)).pop()
     common_characters.append(overlap_char)
 
+
+# part 1 answer
+
 print(sum([sum_letters(letter) for letter in common_characters]))
+
+# part 2
+
+# split rucksack in to lines of 3
+
+n = 3
+
+common_characters2 = []
+
+rucksack_group3 = [rucksack[i:i+n] for i in range(0, len(rucksack), n)]
+
+# find common letter in the three lines
+
+for x in rucksack_group3:
+    print(x)
+    common = set.intersection(*map(set, x)).pop()
+    print(common)
+    common_characters2.append(common)
+
+# sum value of each letter like in part 1
+
+print(sum([sum_letters(letter) for letter in common_characters2]))
